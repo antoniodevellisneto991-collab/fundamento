@@ -1,0 +1,3 @@
+node_modules/ grep -qxF .env .gitignore
+node_modules/
+.env

@@ -1,0 +1,149 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PDF Resolution Pattern",
+  "description": "Schema for learned resolution strategies of PDF admission cases",
+  "type": "object",
+  "required": [
+    "id",
+    "case_type",
+    "decision",
+    "resolution_strategy",
+    "matching_criteria",
+    "recommended_action",
+    "residual_risk",
+    "evidence_thresholds"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique slug identifier (e.g., 'image_only_scan', 'ocr_contaminated_body')"
+    },
+    "case_type": {
+      "type": "string",
+      "enum": [
+        "image_only_scan",
+        "heavy_front_matter",
+        "poor_ocr_quality",
+        "sparse_text_layer",
+        "robust_digital_born",
+        "mixed_text_ocr",
+        "header_footer_contaminated"
+      ],
+      "description": "Category of problem this pattern solves"
+    },
+    "decision": {
+      "type": "string",
+      "enum": ["pass", "pass_with_warning", "abort"],
+      "description": "Admission decision when this pattern matches"
+    },
+    "resolution_strategy": {
+      "type": "string",
+      "enum": [
+        "pass_direct",
+        "pass_with_warning",
+        "abort_no_text_layer",
+        "abort_low_body_confidence",
+        "trim_front_matter_then_pass",
+        "trim_header_footer_then_pass",
+        "manual_review_required"
+      ],
+      "description": "How to handle PDFs matching this pattern"
+    },
+    "matching_criteria": {
+      "type": "object",
+      "description": "Conditions that trigger this pattern (all must be true)",
+      "properties": {
+        "text_page_ratio_lt": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Pattern matches if text_page_ratio < this value"
+        },
+        "text_page_ratio_ge": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "body_confidence_lt": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "body_confidence_ge": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "ocr_risk_ge": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "front_matter_at_head": {
+          "type": "boolean"
+        },
+        "header_footer_ratio_ge": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "short_line_ratio_head_ge": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+    "recommended_action": {
+      "type": "string",
+      "description": "Human-readable action to take (e.g., 'Abort: no text layer detected')"
+    },
+    "recommended_cli_flags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "CLI flags to apply automatically (e.g., ['--keep-front-matter=false'])"
+    },
+    "residual_risk": {
+      "type": "string",
+      "enum": ["low", "medium", "high"],
+      "description": "Risk level of following this pattern recommendation"
+    },
+    "evidence_thresholds": {
+      "type": "object",
+      "description": "Exact thresholds and parameters that define this pattern",
+      "properties": {
+        "min_text_page_ratio": { "type": "number" },
+        "max_ocr_risk": { "type": "number" },
+        "min_body_confidence": { "type": "number" }
+      }
+    },
+    "notes": {
+      "type": "string",
+      "description": "Human notes on when/why this pattern applies"
+    },
+    "worked_on_examples": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "filename": { "type": "string" },
+          "raw_hash": { "type": "string" },
+          "timestamp": { "type": "string", "format": "date-time" }
+        }
+      },
+      "description": "PDFs successfully handled using this pattern"
+    },
+    "times_applied": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "How many times this pattern has been applied"
+    },
+    "last_applied": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO timestamp of last successful application"
+    }
+  }
+}

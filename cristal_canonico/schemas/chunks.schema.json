@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "chunks.schema.json",
+  "title": "chunks.jsonl — saída do chunk (spec 4.4)",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "chunk_id", "char_start", "char_end", "n_paragraphs",
+      "text", "block_types", "quote_ratio", "footnote_ratio"
+    ],
+    "properties": {
+      "chunk_id": { "type": "integer", "minimum": 0 },
+      "char_start": { "type": "integer", "minimum": 0 },
+      "char_end": { "type": "integer", "minimum": 0 },
+      "n_paragraphs": { "type": "integer", "minimum": 1 },
+      "text": { "type": "string" },
+      "block_types": {
+        "type": "object",
+        "additionalProperties": { "type": "integer", "minimum": 0 }
+      },
+      "quote_ratio": { "type": "number", "minimum": 0, "maximum": 1 },
+      "footnote_ratio": { "type": "number", "minimum": 0, "maximum": 1 },
+      "chapter_id": { "type": ["string", "null"] }
+    },
+    "additionalProperties": false
+  }
+}

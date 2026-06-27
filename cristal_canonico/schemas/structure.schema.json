@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "structure.schema.json",
+  "title": "structure.json — saída do segment (spec 1.3)",
+  "type": "object",
+  "required": ["paragraphs"],
+  "properties": {
+    "paragraphs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["char_start", "char_end", "text", "block_type", "chapter_id"],
+        "properties": {
+          "char_start": { "type": "integer", "minimum": 0 },
+          "char_end": { "type": "integer", "minimum": 0 },
+          "text": { "type": "string" },
+          "block_type": { "type": "string", "enum": ["body", "blockquote", "footnote"] },
+          "chapter_id": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

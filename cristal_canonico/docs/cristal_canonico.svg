@@ -1,0 +1,193 @@
+<svg viewBox="0 0 1280 950" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif" role="img">
+  <title>Cristal Canônico — contrato da camada canônica do projeto DNA</title>
+  <desc>Eixo único: montante livre → portão C1–C7 → eixo congelado → a jusante. As 9 etapas (0–8), o contrato do portão, a chave de congelamento, a limpeza em 2 níveis, a fronteira do que não é canônico e o checklist de replicabilidade.</desc>
+  <defs>
+    <marker id="g" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3 L0,6 Z" fill="#5b6b7b"/></marker>
+    <marker id="am" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3 L0,6 Z" fill="#b07d2b"/></marker>
+    <marker id="gr" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3 L0,6 Z" fill="#2f7a52"/></marker>
+    <marker id="pu" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3 L0,6 Z" fill="#8a6db0"/></marker>
+  </defs>
+  <rect width="1280" height="950" fill="#ffffff"/>
+
+  <!-- HEADER -->
+  <text x="30" y="34" font-size="22" font-weight="bold" fill="#1c2733">Cristal Canônico — o contrato da camada canônica (projeto DNA)</text>
+  <text x="30" y="55" font-size="11" fill="#5b6b7b">A estrutura ideal, reutilizável e independente de autor/aplicação. Descreve o CONTRATO, não uma implementação — qualquer engine que o satisfaça produz um corpo canônico válido. Goffman é só um caso de teste.</text>
+  <rect x="1128" y="14" width="122" height="22" rx="5" fill="#eef4f8" stroke="#aac3d6"/>
+  <text x="1189" y="29" font-size="9.5" fill="#1f3a5f" text-anchor="middle">CONTRACT_VERSION 1.0.0</text>
+
+  <!-- PRINCÍPIO DO EIXO ÚNICO (spine) -->
+  <rect x="30" y="74" width="252" height="50" rx="8" fill="#eef4f8" stroke="#aac3d6"/>
+  <text x="156" y="95" font-size="12" font-weight="bold" fill="#1f3a5f" text-anchor="middle">MONTANTE — LIVRE</text>
+  <text x="156" y="112" font-size="9" fill="#46586a" text-anchor="middle">qualquer engine / rota de implementação</text>
+  <line x1="282" y1="99" x2="318" y2="99" stroke="#b07d2b" stroke-width="1.8" marker-end="url(#am)"/>
+
+  <rect x="320" y="71" width="252" height="56" rx="8" fill="#faf1dd" stroke="#b07d2b" stroke-width="2"/>
+  <text x="446" y="93" font-size="12.5" font-weight="bold" fill="#7a531a" text-anchor="middle">PORTÃO — único</text>
+  <text x="446" y="110" font-size="9.5" fill="#7a531a" text-anchor="middle">contrato C1–C7, provado UMA vez</text>
+  <text x="446" y="122" font-size="8.5" font-style="italic" fill="#9a7330" text-anchor="middle">a fronteira da camada canônica</text>
+  <line x1="572" y1="99" x2="608" y2="99" stroke="#2f7a52" stroke-width="1.8" marker-end="url(#gr)"/>
+
+  <rect x="610" y="74" width="252" height="50" rx="8" fill="#e7f3ec" stroke="#2f7a52"/>
+  <text x="736" y="95" font-size="12" font-weight="bold" fill="#1f5c3a" text-anchor="middle">EIXO CONGELADO</text>
+  <text x="736" y="112" font-size="9" fill="#2f6f6a" text-anchor="middle">book.body.txt + body_hash</text>
+  <line x1="862" y1="99" x2="898" y2="99" stroke="#5b6b7b" stroke-width="1.8" marker-end="url(#g)"/>
+
+  <rect x="900" y="74" width="350" height="50" rx="8" fill="#ffffff" stroke="#46586a"/>
+  <text x="1075" y="95" font-size="12" font-weight="bold" fill="#1c2733" text-anchor="middle">A JUSANTE — HERDA</text>
+  <text x="1075" y="112" font-size="9" fill="#46586a" text-anchor="middle">trilhas conceitual + formal · nada renegocia o eixo</text>
+
+  <text x="30" y="143" font-size="9.5" font-style="italic" fill="#8a97a6">Liberdade de montante é deliberada: toda rota converge ao MESMO portão · ou PASSA (corpo certificado) ou ABORTA (motivo = 1 dos 7 checks, nomeado) — não há terceiro caminho.</text>
+
+  <!-- LEGEND -->
+  <g font-size="9" fill="#1c2733">
+    <rect x="30" y="158" width="12" height="12" rx="2" fill="#eef4f8" stroke="#aac3d6"/><text x="46" y="168">montante / limpeza N1</text>
+    <rect x="190" y="158" width="12" height="12" rx="2" fill="#faf1dd" stroke="#b07d2b"/><text x="206" y="168">portão C1–C7</text>
+    <rect x="312" y="158" width="12" height="12" rx="2" fill="#e7f3ec" stroke="#2f7a52"/><text x="328" y="168">eixo congelado</text>
+    <rect x="438" y="158" width="12" height="12" rx="2" fill="#ffffff" stroke="#46586a"/><text x="454" y="168">a jusante (determinístico, sem LLM)</text>
+    <rect x="668" y="158" width="12" height="12" rx="2" fill="#efe9f5" stroke="#8a6db0"/><text x="684" y="168">Nível 2 — por trilha</text>
+    <rect x="810" y="158" width="12" height="12" rx="2" fill="#f7e9e9" stroke="#b05b5b"/><text x="826" y="168">fronteira / o que NÃO é canônico</text>
+  </g>
+
+  <!-- ================= LEFT COLUMN: AS ETAPAS 0–8 ================= -->
+  <text x="30" y="192" font-size="13" font-weight="bold" fill="#1c2733">As etapas (forma abstrata) — 0 a 8</text>
+
+  <!-- zone rails -->
+  <rect x="108" y="200" width="510" height="246" rx="8" fill="#f5faf9" stroke="#d4e6e2"/>
+  <rect x="108" y="454" width="510" height="312" rx="8" fill="#f7f8fa" stroke="#e3e8ee"/>
+  <text x="52" y="323" font-size="9.5" font-weight="bold" fill="#6c7c8c" text-anchor="middle" transform="rotate(-90 52 323)">PRODUÇÃO DO EIXO ÚNICO</text>
+  <text x="52" y="610" font-size="9.5" font-weight="bold" fill="#9aa3b0" text-anchor="middle" transform="rotate(-90 52 610)">A JUSANTE · DETERMINÍSTICO · SEM LLM</text>
+
+  <!-- arrows down the spine of the pipeline -->
+  <line x1="360" y1="256" x2="360" y2="266" stroke="#5b6b7b" stroke-width="1.4" marker-end="url(#g)"/>
+  <line x1="360" y1="318" x2="360" y2="326" stroke="#b07d2b" stroke-width="1.6" marker-end="url(#am)"/>
+  <line x1="360" y1="386" x2="360" y2="394" stroke="#2f7a52" stroke-width="1.6" marker-end="url(#gr)"/>
+  <line x1="360" y1="448" x2="360" y2="458" stroke="#5b6b7b" stroke-width="1.4" marker-end="url(#g)"/>
+  <line x1="360" y1="510" x2="360" y2="520" stroke="#5b6b7b" stroke-width="1.4" marker-end="url(#g)"/>
+  <line x1="360" y1="572" x2="360" y2="582" stroke="#5b6b7b" stroke-width="1.4" marker-end="url(#g)"/>
+  <line x1="360" y1="634" x2="360" y2="644" stroke="#5b6b7b" stroke-width="1.4" marker-end="url(#g)"/>
+  <line x1="360" y1="696" x2="360" y2="706" stroke="#5b6b7b" stroke-width="1.4" marker-end="url(#g)"/>
+
+  <!-- S0 extract -->
+  <rect x="120" y="208" width="486" height="48" rx="6" fill="#eef4f8" stroke="#aac3d6"/>
+  <circle cx="144" cy="232" r="11" fill="#1f3a5f"/><text x="144" y="236" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">0</text>
+  <text x="166" y="227" font-size="11" font-weight="bold" fill="#1c2733">extract — adaptador de formato → texto</text>
+  <text x="166" y="245" font-size="8.6" fill="#46586a">→ entrada.raw.txt + raw_hash</text>
+
+  <!-- S1 preclean N1 -->
+  <rect x="120" y="270" width="486" height="48" rx="6" fill="#eef4f8" stroke="#aac3d6"/>
+  <circle cx="144" cy="294" r="11" fill="#1f3a5f"/><text x="144" y="298" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">1</text>
+  <text x="166" y="288" font-size="11" font-weight="bold" fill="#1c2733">preclean — Nível 1 (genérico)</text>
+  <text x="166" y="305" font-size="8.6" fill="#46586a">5 estágios + CANONICAL_NOISE_PATTERNS + proteção de sentinela · → texto limpo</text>
+  <rect x="500" y="276" width="100" height="15" rx="3" fill="#e7f3ec" stroke="#2f7a52"/><text x="550" y="287" font-size="7.6" fill="#1f5c3a" text-anchor="middle">entra no freeze_key</text>
+
+  <!-- S2 GATE -->
+  <rect x="120" y="328" width="486" height="58" rx="6" fill="#faf1dd" stroke="#b07d2b" stroke-width="2"/>
+  <circle cx="144" cy="357" r="11" fill="#b07d2b"/><text x="144" y="361" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">2</text>
+  <text x="166" y="348" font-size="11.5" font-weight="bold" fill="#7a531a">PORTÃO (gate) — certifica o contrato C1–C7</text>
+  <text x="166" y="365" font-size="8.8" fill="#7a531a">PASSA → corpo   ·   ou ABORTA (motivo = 1 dos 7 checks, nomeado)</text>
+  <text x="166" y="379" font-size="8.4" font-style="italic" fill="#9a7330">◀ fronteira da camada canônica em sentido estrito</text>
+
+  <!-- S3 corpo canônico -->
+  <rect x="120" y="394" width="486" height="54" rx="6" fill="#e7f3ec" stroke="#2f7a52"/>
+  <circle cx="144" cy="421" r="11" fill="#1f5c3a"/><text x="144" y="425" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">3</text>
+  <text x="166" y="414" font-size="11" font-weight="bold" fill="#1f5c3a">corpo canônico — eixo único CONGELADO</text>
+  <text x="166" y="431" font-size="8.6" fill="#2f6f6a">→ book.body.txt + body_hash</text>
+  <text x="166" y="443" font-size="8.2" font-style="italic" fill="#2f6f6a">body_hash determinado pela freeze_key (ver painel à direita)</text>
+
+  <!-- S4 segment -->
+  <rect x="120" y="458" width="486" height="50" rx="6" fill="#ffffff" stroke="#46586a"/>
+  <circle cx="144" cy="483" r="11" fill="#46586a"/><text x="144" y="487" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">4</text>
+  <text x="166" y="478" font-size="11" font-weight="bold" fill="#1c2733">segment — corpo → parágrafos com spans</text>
+  <text x="166" y="496" font-size="8.6" fill="#46586a">char_start / char_end exatos (o span que C1 prova) · → structure.json</text>
+
+  <!-- S5 classify -->
+  <rect x="120" y="520" width="486" height="50" rx="6" fill="#ffffff" stroke="#46586a"/>
+  <circle cx="144" cy="545" r="11" fill="#46586a"/><text x="144" y="549" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">5</text>
+  <text x="166" y="540" font-size="11" font-weight="bold" fill="#1c2733">classify — 5 classes estruturais</text>
+  <text x="166" y="558" font-size="8.1" fill="#46586a">navigation · editorial · main_body · quotation · footnote — de sentinela+front matter, nunca de palpite</text>
+
+  <!-- S6 chunk -->
+  <rect x="120" y="582" width="486" height="50" rx="6" fill="#ffffff" stroke="#46586a"/>
+  <circle cx="144" cy="607" r="11" fill="#46586a"/><text x="144" y="611" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">6</text>
+  <text x="166" y="602" font-size="11" font-weight="bold" fill="#1c2733">chunk — 2 janelas sobre a mesma estrutura</text>
+  <text x="166" y="620" font-size="8.6" fill="#46586a">conceitual (menor) + formal (maior, estilometria) · → chunks.jsonl · chunks.formal.jsonl</text>
+
+  <!-- S7 quality -->
+  <rect x="120" y="644" width="486" height="50" rx="6" fill="#ffffff" stroke="#46586a"/>
+  <circle cx="144" cy="669" r="11" fill="#46586a"/><text x="144" y="673" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">7</text>
+  <text x="166" y="664" font-size="11" font-weight="bold" fill="#1c2733">quality — filtro determinístico</text>
+  <text x="166" y="682" font-size="8.6" fill="#46586a">11 flags sobre os chunks · → chunks.quality.jsonl (+ formal)</text>
+
+  <!-- S8 eligibility N2 -->
+  <rect x="120" y="706" width="486" height="54" rx="6" fill="#efe9f5" stroke="#8a6db0"/>
+  <circle cx="144" cy="733" r="11" fill="#5a4a78"/><text x="144" y="737" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">8</text>
+  <text x="166" y="726" font-size="11" font-weight="bold" fill="#5a4a78">eligibility — Nível 2 (por trilha)</text>
+  <text x="166" y="743" font-size="8.6" fill="#5a4a78">limpeza específica pós-portão, sobre chunks JÁ certificados · pipeline/chunk_eligibility.py</text>
+  <text x="166" y="755" font-size="8.2" font-style="italic" fill="#7a679a">a classe (5) é o que ALIMENTA a elegibilidade por trilha</text>
+
+  <!-- dashed link classify(5) -> eligibility(8) -->
+  <path d="M120,545 L100,545 L100,733 L120,733" fill="none" stroke="#8a6db0" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#pu)"/>
+
+  <!-- ================= RIGHT COLUMN ================= -->
+  <!-- C1–C7 contract -->
+  <rect x="640" y="200" width="610" height="312" rx="8" fill="#ffffff" stroke="#b07d2b"/>
+  <rect x="640" y="200" width="610" height="28" rx="8" fill="#faf1dd" stroke="#b07d2b"/>
+  <text x="652" y="219" font-size="11.5" font-weight="bold" fill="#7a531a">O CONTRATO DO PORTÃO — C1 … C7  (o coração do cristal)</text>
+  <text x="652" y="244" font-size="8.8" font-style="italic" fill="#8a97a6">Invariantes sobre integridade estrutural e proveniência — nenhuma sobre conteúdo. É o que torna o corpo reutilizável e reprodutível.</text>
+
+  <g font-size="8.9" fill="#1c2733">
+    <text x="652" y="266" font-weight="bold" fill="#7a531a">C1</text><text x="700" y="266">eixo round-trip — strip_sentinels(body[start:end]) == paragraph.text, p/ TODO parágrafo</text>
+    <text x="652" y="288" font-weight="bold" fill="#7a531a">C1'</text><text x="700" y="288">cobertura — spans sem sobreposição nem lacuna; o corpo é coberto inteiro pelo eixo</text>
+    <text x="652" y="310" font-weight="bold" fill="#7a531a">C2</text><text x="700" y="310">sentinelas — isoladas em linha própria, balanceadas; chamadas de nota balanceadas</text>
+    <text x="652" y="332" font-weight="bold" fill="#7a531a">C3</text><text x="700" y="332">hashável — corpo hashável de forma estável</text>
+    <text x="652" y="354" font-weight="bold" fill="#7a531a">C4</text><text x="700" y="354">isolamento — nenhum vazamento de ruído residual no corpo</text>
+    <text x="652" y="376" font-weight="bold" fill="#7a531a">C5</text><text x="700" y="376">estabilidade — mesma entrada + contrato → mesmo corpo (teste diferencial)</text>
+    <text x="652" y="398" font-weight="bold" fill="#7a531a">C6</text><text x="700" y="398">proveniência — source_format · source_edition · translation_layer declarados (None permitido)</text>
+    <text x="652" y="420" font-weight="bold" fill="#7a531a">C7</text><text x="700" y="420">tamanho mínimo — corpo ≥ min_size (words/chars); abaixo, ABORTA</text>
+  </g>
+  <line x1="652" y1="436" x2="1238" y2="436" stroke="#ead9ba" stroke-width="1"/>
+  <rect x="652" y="448" width="586" height="50" rx="6" fill="#f5faf9" stroke="#d4e6e2"/>
+  <text x="664" y="467" font-size="9.2" font-weight="bold" fill="#1f5c3a">C3 + C5 = reprodutibilidade</text>
+  <text x="664" y="485" font-size="8.8" fill="#2f6f6a">o corpo é uma FUNÇÃO PURA de ( bruto , contrato , engine ).</text>
+
+  <!-- freeze_key -->
+  <rect x="640" y="524" width="610" height="116" rx="8" fill="#e7f3ec" stroke="#2f7a52"/>
+  <text x="652" y="544" font-size="11.5" font-weight="bold" fill="#1f5c3a">CONGELAMENTO — a chave de congelamento</text>
+  <text x="652" y="566" font-size="10" font-family="Menlo, Consolas, monospace" fill="#1c2733">freeze_key = f( raw_hash , anchor_filling_hash , engine_version )</text>
+  <g font-size="8.7" fill="#2f6f6a">
+    <text x="652" y="586">• raw_hash — hash do texto bruto de entrada</text>
+    <text x="652" y="601">• anchor_filling_hash — repertório de ruído + assinatura de front matter</text>
+    <text x="652" y="616">• engine_version — versão do motor que produziu o corpo</text>
+  </g>
+  <text x="652" y="633" font-size="8.6" font-style="italic" fill="#1f5c3a">muda 1 dos 3 → re-bake controlado (novo body_hash) · muda nenhum → o mesmo corpo, byte a byte</text>
+
+  <!-- fronteira -->
+  <rect x="640" y="652" width="610" height="170" rx="8" fill="#f7e9e9" stroke="#b05b5b"/>
+  <text x="652" y="672" font-size="11.5" font-weight="bold" fill="#8a3b3b">A FRONTEIRA — o que NÃO é canônico</text>
+  <text x="652" y="690" font-size="8.7" font-style="italic" fill="#8a3b3b">Teste de pertencimento: “isto seria igual para qualquer autor e qualquer trilha?” Se não, está fora.</text>
+  <g font-size="8.9" fill="#5a2b2b">
+    <text x="652" y="712">✗ Vocabulário conceitual de um autor → trilha conceitual</text>
+    <text x="668" y="726" font-size="8.1" font-style="italic" fill="#a05151">resíduo conhecido: CONCEPT_SPECS · OPERATION_SPECS · _revelation_utility() em conceptual.py ainda carregam Goffman</text>
+    <text x="652" y="746">✗ Critérios de voz / estilometria → trilha formal</text>
+    <text x="652" y="766">✗ Cenas · simulação · julgamento por LLM → aplicação</text>
+    <text x="652" y="786">✗ Limiares de elegibilidade de uma trilha → Nível 2 (por trilha)</text>
+  </g>
+  <text x="652" y="808" font-size="8.6" font-style="italic" fill="#8a3b3b">Se aparecer DENTRO da camada canônica, é resíduo a extrair.</text>
+
+  <!-- LIMPEZA EM 2 NÍVEIS (left, below pipeline) -->
+  <rect x="108" y="772" width="510" height="50" rx="6" fill="#eef4f8" stroke="#aac3d6"/>
+  <text x="118" y="789" font-size="9.5" font-weight="bold" fill="#1f3a5f">LIMPEZA EM 2 NÍVEIS — separada pela posição vs. portão</text>
+  <text x="118" y="803" font-size="8.2" fill="#46586a">N1 (etapa 1) ANTES do portão — genérico, comum a todo material · entra no freeze_key (identidade do corpo)</text>
+  <text x="118" y="816" font-size="8.2" fill="#46586a">N2 (etapa 8) DEPOIS do portão — por trilha, sobre chunks certificados · opção B (limpar bruto) rejeitada: quebra o eixo</text>
+
+  <!-- CHECKLIST DE REPLICABILIDADE (footer band) -->
+  <rect x="30" y="838" width="1220" height="96" rx="8" fill="#f5faf9" stroke="#d4e6e2"/>
+  <text x="44" y="860" font-size="12" font-weight="bold" fill="#1c2733">Checklist de replicabilidade — reaplicar o canônico a um novo autor/sistema</text>
+  <g font-size="9" fill="#1c2733">
+    <text x="48" y="882"><tspan font-weight="bold" fill="#2f6f6a">1</tspan>  um adaptador de EXTRACT para o formato de entrada</text>
+    <text x="48" y="902"><tspan font-weight="bold" fill="#2f6f6a">2</tspan>  um repertório de RUÍDO Nível 1 (parte canônico, extensível via --noise-pattern)</text>
+    <text x="660" y="882"><tspan font-weight="bold" fill="#2f6f6a">3</tspan>  declarar a PROVENIÊNCIA (source_format · source_edition · translation_layer · min_size · size_unit)</text>
+    <text x="660" y="902"><tspan font-weight="bold" fill="#2f6f6a">4</tspan>  passar o PORTÃO C1–C7 → se passa, há corpo; se não, ABORTA nomeando o check</text>
+  </g>
+  <text x="44" y="924" font-size="9" font-style="italic" fill="#8a97a6">Nada disso menciona quem é o autor — é essa indiferença ao conteúdo que faz do canônico um cristal.</text>
+</svg>

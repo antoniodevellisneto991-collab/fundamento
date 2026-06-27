@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "anchor_catalog.schema.json",
+  "title": "Entrada do catálogo de âncora (spec 5.4)",
+  "type": "object",
+  "required": ["text_id", "rung", "filling", "provenance", "body_size", "gate", "body_hash"],
+  "properties": {
+    "text_id": { "type": "string", "description": "raw_hash" },
+    "rung": { "type": "string", "enum": ["canonical", "config", "hook"] },
+    "filling": {
+      "type": "object",
+      "required": ["kind", "ref"],
+      "properties": {
+        "kind": { "type": "string", "enum": ["none", "toml", "hook"] },
+        "ref": { "type": ["string", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["source_format", "source_edition", "translation_layer"],
+      "properties": {
+        "source_format": { "type": "string" },
+        "source_edition": { "type": "string" },
+        "translation_layer": { "type": ["string", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "body_size": { "type": "integer", "minimum": 0 },
+    "gate": {
+      "type": "object",
+      "required": ["passed", "contract_version"],
+      "properties": {
+        "passed": { "type": "boolean" },
+        "contract_version": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "body_hash": { "type": "string" }
+  },
+  "additionalProperties": false
+}
