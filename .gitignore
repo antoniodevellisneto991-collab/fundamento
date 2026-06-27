@@ -1,3 +1,4 @@
 node_modules/ grep -qxF .env .gitignore
 node_modules/
 .env
+pycache/ grep -qxF .pyc .gitignore
